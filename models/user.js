@@ -1,0 +1,69 @@
+const mongoose = require('mongoose')
+const {ObjectId} = mongoose.Schema.Types
+
+const userSchama = new mongoose.Schema({
+name:{
+    type:String,
+    required:true
+},
+email:{
+    type:String,
+    required:true
+},
+password:{
+    type:String,
+    required:true
+},
+userType:{
+    type:String,
+    required:true
+},
+resetToken:String,
+expireToken:Date,
+mechanicTypeName:{
+    type:String
+},
+latitude:{
+    type:Number
+},
+longitude:{
+    type:Number
+},
+workshopName:{
+    type:String
+},
+workshopAddress:{
+    type:String
+},
+workshopOpeningTime:{
+    type:String
+},
+workshopClosingTime:{
+    type:String
+},
+workshopAddress:{
+    type:String
+},
+contactNumber:{
+    type:String
+},
+experience:{
+    type:String
+},
+description:{
+    type:String
+},
+pic:{
+    type:String
+},
+city:{
+    type:String
+},
+skills:[{
+        type:ObjectId,
+        ref:"Skills"
+}]
+})
+
+
+mongoose.model("User",userSchama)
